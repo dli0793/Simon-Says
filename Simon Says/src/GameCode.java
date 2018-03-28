@@ -1,14 +1,22 @@
 
+import java.io.FileInputStream;
 import java.util.ArrayList;
+
 
 import javafx.animation.FadeTransition;
 import javafx.animation.SequentialTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -16,42 +24,40 @@ import javafx.util.Duration;
 public class GameCode extends Application
 {
 
+	private static final String a = "Welcome to Simon Says! Follow the light patterns as displayed. Let's see how well your memory is!!"
+;
+
+
 	public static void main(String[] args) 
 	{
 		Application.launch(args);
 		
 	}
 	
-		@Override
-		public void start(Stage arg0) throws Exception {
-		
-		    }
-	
-	
 
-	//*/private Scene scene1, scene2;
-   // private Button button2_1, button1_2, blue, red, yellow, green;
-   // private Label label1, label2;
-   // private VBox layout1, layout2;
-    //private Stage frame;
+	private Scene scene1, scene2;
+    private Button button2_1, button1_2, blue, red, yellow, green;
+    private Label label1, label2; 
+    private VBox layout1, layout2;
+    private Stage frame;
 
 
-	//@Override
-	//public void start(Stage primaryStage) throws Exception 
-	//{
-		/*/Labels 
+	@Override
+	public void start(Stage primaryStage) throws Exception 
+	{
+		//Labels 
 		primaryStage.setTitle("Simon Says");
-		Label label = new Label("Welcome to Simon Says! Follow the light patterns as displayed. Let's see how well your memory is!!");
+		Label label = new Label(a);
         Scene scene = new Scene(label, 400, 500); //not showing up
         primaryStage.setScene(scene);
         Label label2 = new Label("Score: ");
-        Scene scene2 = new Scene(label2, 400, 400);
+        Scene scene2 = new Scene(label2, 400, 400); // ^ prob causing the same unused error
         primaryStage.setScene(scene2);
         primaryStage.show();
         
         //Creating Buttons
         //for making stuff pretty later on
-        /*FileInputStream input = new FileInputStream("resources/images/iconmonstr-home-6-48.png");
+        FileInputStream input = new FileInputStream("resources/images/iconmonstr-home-6-48.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
 
@@ -97,12 +103,15 @@ public class GameCode extends Application
         layout2.getChildren().addAll(label2, button1_2, blue, red, yellow, green);
 
         // Create scenes
-        scene1 = new Scene(layout1, 400,400);
+        scene1 = new Scene(layout1, 400,500);
         scene2 = new Scene(layout2, 400,400);
 
         frame.setScene(scene1);
         frame.setTitle("Simon Says");
-        frame.show();*/
-	//}
+        frame.show();
+	}
+
+
+	
 
 }
