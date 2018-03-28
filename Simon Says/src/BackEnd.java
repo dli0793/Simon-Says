@@ -10,6 +10,7 @@ import java.util.List;
 
 public class BackEnd 
 {
+	@SuppressWarnings("unused")
 	private static List<Score> readScoresFromCSV(String fileName) 
 	{ 
 		List<Score> scores = new ArrayList<>(); 
@@ -50,10 +51,12 @@ public class BackEnd
 		String name = metadata[0]; 
 		int score = Integer.parseInt(metadata[1]); 
 		// create and return score of this metadata 
-		return new Score(name, score); 
+		
+		 Score a = new BackEnd.Score(name, score);
+		 return a; 
 	}
 	
-	class Score
+	static class Score
 	{
 		private String name;
 		private int score;

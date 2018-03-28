@@ -27,7 +27,6 @@ public class GameCode extends Application
 		
 		    }
 	
-		
 	
 
 	//*/private Scene scene1, scene2;
